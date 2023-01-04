@@ -1,0 +1,15 @@
+{
+    "KBHit":false,
+    "batchBindOnly":1,
+    "binFileName":"square_2419310167167952263_0",
+    "binFileSuffix":".o",
+    "blockDim":32,
+    "kernelName":"square_2419310167167952263_0__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "opParaSize":0,
+    "parameters":[
+        0,
+        0
+    ],
+    "sha256":"389f63abe10be11349ce632cb5b8a36542014261dffe0c37156783785f69b8b1"
+}

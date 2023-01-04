@@ -1,0 +1,26 @@
+{
+    "batchBindOnly":1,
+    "binFileName":"adam_apply_one_with_decay_12918255150373038745_0",
+    "binFileSuffix":".o",
+    "blockDim":32,
+    "kernelName":"adam_apply_one_with_decay_12918255150373038745_0__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "opParaSize":0,
+    "parameters":[
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "sha256":"e35cf56954c8c19dfb0c65ddf3a2e1dcd79aaeb5917362e3792b1dc9f4e44866"
+}

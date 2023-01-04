@@ -1,0 +1,15 @@
+{
+    "KBHit":false,
+    "binFileName":"avg_pool_18405532331245457622_0",
+    "binFileSuffix":".o",
+    "blockDim":32,
+    "kernelName":"avg_pool_18405532331245457622_0__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "opParaSize":0,
+    "parameters":[
+        0,
+        0,
+        0
+    ],
+    "sha256":"5927c3d41ba8bbbf59c77bea0a6ed2bbe76b78f60ee6fa9403d0bb9a3b051e42"
+}

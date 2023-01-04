@@ -1,0 +1,14 @@
+{
+    "batchBindOnly":1,
+    "binFileName":"cast_3150316166829887547_0",
+    "binFileSuffix":".o",
+    "blockDim":32,
+    "kernelName":"cast_3150316166829887547_0__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "opParaSize":0,
+    "parameters":[
+        0,
+        0
+    ],
+    "sha256":"317beba39648b5ea9cff3c460d790b9c57378698ead0af69918f8e4e4d26043c"
+}

@@ -1,0 +1,16 @@
+{
+    "batchBindOnly":1,
+    "binFileName":"gelu_grad_2608356547898041511_0",
+    "binFileSuffix":".o",
+    "blockDim":32,
+    "kernelName":"gelu_grad_2608356547898041511_0__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "opParaSize":0,
+    "parameters":[
+        0,
+        0,
+        0,
+        0
+    ],
+    "sha256":"d2534218078ee088b065e2fa060f182696fefe0eb96137288897c34e5b6c7a69"
+}

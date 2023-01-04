@@ -1,0 +1,16 @@
+{
+    "KBHit":false,
+    "binFileName":"te_fusion_conv2d_bias_add_cast_17169422106988116937_0",
+    "binFileSuffix":".o",
+    "blockDim":7,
+    "kernelName":"te_fusion_conv2d_bias_add_cast_17169422106988116937_0__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "opParaSize":0,
+    "parameters":[
+        0,
+        0,
+        0,
+        0
+    ],
+    "sha256":"03c993a48ca2f87dc88f09494bafee0fad8a57b629a3df1f6cc5846683aef1e9"
+}

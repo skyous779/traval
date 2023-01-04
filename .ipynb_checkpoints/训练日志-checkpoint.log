@@ -1,0 +1,942 @@
+=> Reading YAML config from None
+Namespace(accumulation_step=1, amp_level='O1', arch='ConformerTi', auto_augment='rand-m9-mstd0.5-inc1', base_lr=0.001, batch_size=64, beta=[0.9, 0.999], ckpt_url='../best.ckpt', clip_global_norm_value=5.0, config_file=None, crop_pct=0.875, cutmix=1.0, data_url='/home/ma-user/work/data', dataset_sink_mode=False, deploy=False, device_id=0, device_num=1, device_target='Ascend', drop_path_rate=0.1, ema_decay=0.9999, epochs=300, eps=1e-08, eval=0, file_format='MINDIR', fold=0, fold_train=1, graph_mode=0, image_size=224, in_chans=3, interpolation='bicubic', is_dynamic_loss_scale=True, keep_bn_fp32=True, keep_checkpoint_max=20, label_smoothing=0.1, loss_scale=1024, lr_adjust=30, lr_gamma=0.97, lr_scheduler='cosine_lr', min_lr=1e-05, mix_up=0.8, mixup_mode='batch', mixup_prob=1.0, mlp_ratio=4.0, momentum=0.9, num_classes=54, num_parallel_workers=16, optimizer='adamw', pretrained='True', re_count=1, re_mode='pixel', re_prob=0.25, result_url='./result', run_intelligent=False, run_modelarts=False, run_openi=True, save_every=2, seed=42, set='ImageNet', start_epoch=0, switch_prob=0.5, train_url='./', warmup_length=5, warmup_lr=1e-06, weight_decay=0.05, with_ema=False)
+[WARNING] ME(9575:281473180560064,MainProcess):2023-01-04-08:15:38.140.048 [mindspore/context.py:920] For 'context.set_context', 'enable_auto_mixed_precision' parameter is deprecated. For details, please see the interface parameter API comments
+==> Creating model 'ConformerTi'
+=> using amp_level O1
+=========================Using MixBatch=========================
+=> loading pretrained weights from '../best.ckpt'
+==> removing model.trans_cls_head.bias with shape (1000,)
+==> removing model.conv_cls_head.bias with shape (1000,)
+==> removing model.trans_cls_head.weight with shape (1000, 384)
+==> removing model.conv_cls_head.weight with shape (1000, 256)
+==> removing adam_m.model.trans_cls_head.bias with shape (1000,)
+==> removing adam_m.model.conv_cls_head.bias with shape (1000,)
+==> removing adam_m.model.trans_cls_head.weight with shape (1000, 384)
+==> removing adam_m.model.conv_cls_head.weight with shape (1000, 256)
+==> removing adam_v.model.trans_cls_head.bias with shape (1000,)
+==> removing adam_v.model.conv_cls_head.bias with shape (1000,)
+==> removing adam_v.model.trans_cls_head.weight with shape (1000, 384)
+==> removing adam_v.model.conv_cls_head.weight with shape (1000, 256)
+[WARNING] ME(9575:281473180560064,MainProcess):2023-01-04-08:15:45.599.136 [mindspore/train/serialization.py:712] For 'load_param_into_net', 4 parameters in the 'net' are not loaded, because they are not in the 'parameter_dict', please check whether the network structure is consistent when training and loading checkpoint.
+[WARNING] ME(9575:281473180560064,MainProcess):2023-01-04-08:15:45.600.014 [mindspore/train/serialization.py:714] model.trans_cls_head.weight is not loaded.
+[WARNING] ME(9575:281473180560064,MainProcess):2023-01-04-08:15:45.600.139 [mindspore/train/serialization.py:714] model.trans_cls_head.bias is not loaded.
+[WARNING] ME(9575:281473180560064,MainProcess):2023-01-04-08:15:45.600.230 [mindspore/train/serialization.py:714] model.conv_cls_head.weight is not loaded.
+[WARNING] ME(9575:281473180560064,MainProcess):2023-01-04-08:15:45.600.314 [mindspore/train/serialization.py:714] model.conv_cls_head.bias is not loaded.
+=> Getting ImageNet dataset
+==> use fold 0for train
+[WARNING] ME(9575:281473180560064,MainProcess):2023-01-04-08:15:45.611.368 [mindspore/dataset/core/validator_helpers.py:804] 'TypeCast' from mindspore.dataset.transforms.c_transforms is deprecated from version 1.8 and will be removed in a future version. Use 'TypeCast' from mindspore.dataset.transforms instead.
+[WARNING] ME(9575:281473180560064,MainProcess):2023-01-04-08:15:45.614.552 [mindspore/dataset/core/validator_helpers.py:804] 'TypeCast' from mindspore.dataset.transforms.c_transforms is deprecated from version 1.8 and will be removed in a future version. Use 'TypeCast' from mindspore.dataset.transforms instead.
+[WARNING] ME(9575:281473180560064,MainProcess):2023-01-04-08:15:45.615.504 [mindspore/dataset/core/validator_helpers.py:804] 'OneHot' from mindspore.dataset.transforms.c_transforms is deprecated from version 1.8 and will be removed in a future version. Use 'OneHot' from mindspore.dataset.transforms instead.
+=> When using train_wrapper, using optimizer adamw
+=> Get LR from epoch: 0
+=> Start step: 0
+=> Total step: 13800
+=> Accumulation step:1
+learning_rate 0.00101
+=> Using DynamicLossScaleUpdateCell
+begin train
+[WARNING] ME(9575:281473180560064,MainProcess):2023-01-04-08:15:46.578.973 [mindspore/train/model.py:1077] For EvaluateCallBack callback, {'epoch_end'} methods may not be supported in later version, Use methods prefixed with 'on_train' or 'on_eval' instead when using customized callbacks.
+epoch: 1 step: 46, loss is 4.01086950302124
+Train epoch time: 237412.816 ms, per step time: 5161.148 ms
+epoch: 1 acc: 0.06960227272727272, best acc is 0.06960227272727272
+INFO:root:Using MoXing-v2.0.1.rc0.ffd1c0c8-ffd1c0c8
+INFO:root:Using OBS-Python-SDK-3.20.9.1
+epoch: 2 step: 46, loss is 3.9928195476531982
+Train epoch time: 6646.818 ms, per step time: 144.496 ms
+epoch: 2 acc: 0.10369318181818182, best acc is 0.10369318181818182
+epoch: 3 step: 46, loss is 3.570457935333252
+Train epoch time: 6604.357 ms, per step time: 143.573 ms
+epoch: 3 acc: 0.4928977272727273, best acc is 0.4928977272727273
+epoch: 4 step: 46, loss is 3.5638694763183594
+Train epoch time: 6577.109 ms, per step time: 142.981 ms
+epoch: 4 acc: 0.4900568181818182, best acc is 0.4928977272727273
+epoch: 5 step: 46, loss is 3.3023619651794434
+Train epoch time: 6599.378 ms, per step time: 143.465 ms
+epoch: 5 acc: 0.46732954545454547, best acc is 0.4928977272727273
+epoch: 6 step: 46, loss is 3.4569926261901855
+Train epoch time: 6578.407 ms, per step time: 143.009 ms
+epoch: 6 acc: 0.44176136363636365, best acc is 0.4928977272727273
+epoch: 7 step: 46, loss is 2.8320484161376953
+Train epoch time: 6628.965 ms, per step time: 144.108 ms
+epoch: 7 acc: 0.3963068181818182, best acc is 0.4928977272727273
+epoch: 8 step: 46, loss is 3.3903212547302246
+Train epoch time: 6591.927 ms, per step time: 143.303 ms
+epoch: 8 acc: 0.4786931818181818, best acc is 0.4928977272727273
+epoch: 9 step: 46, loss is 3.113400936126709
+Train epoch time: 6607.998 ms, per step time: 143.652 ms
+epoch: 9 acc: 0.5213068181818182, best acc is 0.5213068181818182
+epoch: 10 step: 46, loss is 3.199002742767334
+Train epoch time: 6590.578 ms, per step time: 143.273 ms
+epoch: 10 acc: 0.6178977272727273, best acc is 0.6178977272727273
+epoch: 11 step: 46, loss is 2.742271661758423
+Train epoch time: 6622.497 ms, per step time: 143.967 ms
+epoch: 11 acc: 0.6051136363636364, best acc is 0.6178977272727273
+epoch: 12 step: 46, loss is 2.652266502380371
+Train epoch time: 6578.624 ms, per step time: 143.014 ms
+epoch: 12 acc: 0.6590909090909091, best acc is 0.6590909090909091
+epoch: 13 step: 46, loss is 3.2406857013702393
+Train epoch time: 6608.664 ms, per step time: 143.667 ms
+epoch: 13 acc: 0.6448863636363636, best acc is 0.6590909090909091
+epoch: 14 step: 46, loss is 2.5169663429260254
+Train epoch time: 6601.109 ms, per step time: 143.502 ms
+epoch: 14 acc: 0.6761363636363636, best acc is 0.6761363636363636
+epoch: 15 step: 46, loss is 3.0103368759155273
+Train epoch time: 6590.968 ms, per step time: 143.282 ms
+epoch: 15 acc: 0.6704545454545454, best acc is 0.6761363636363636
+epoch: 16 step: 46, loss is 2.413888454437256
+Train epoch time: 6614.757 ms, per step time: 143.799 ms
+epoch: 16 acc: 0.6931818181818182, best acc is 0.6931818181818182
+epoch: 17 step: 46, loss is 2.6999824047088623
+Train epoch time: 6589.257 ms, per step time: 143.245 ms
+epoch: 17 acc: 0.7215909090909091, best acc is 0.7215909090909091
+epoch: 18 step: 46, loss is 3.0249881744384766
+Train epoch time: 6581.244 ms, per step time: 143.071 ms
+epoch: 18 acc: 0.6988636363636364, best acc is 0.7215909090909091
+epoch: 19 step: 46, loss is 2.768568277359009
+Train epoch time: 6611.881 ms, per step time: 143.737 ms
+epoch: 19 acc: 0.6889204545454546, best acc is 0.7215909090909091
+epoch: 20 step: 46, loss is 3.1757140159606934
+Train epoch time: 6592.694 ms, per step time: 143.319 ms
+epoch: 20 acc: 0.7002840909090909, best acc is 0.7215909090909091
+epoch: 21 step: 46, loss is 3.0993642807006836
+Train epoch time: 6591.974 ms, per step time: 143.304 ms
+epoch: 21 acc: 0.7272727272727273, best acc is 0.7272727272727273
+epoch: 22 step: 46, loss is 2.813173770904541
+Train epoch time: 6604.323 ms, per step time: 143.572 ms
+epoch: 22 acc: 0.7372159090909091, best acc is 0.7372159090909091
+epoch: 23 step: 46, loss is 2.134598731994629
+Train epoch time: 6654.016 ms, per step time: 144.653 ms
+epoch: 23 acc: 0.7414772727272727, best acc is 0.7414772727272727
+epoch: 24 step: 46, loss is 2.631277322769165
+Train epoch time: 6569.326 ms, per step time: 142.811 ms
+epoch: 24 acc: 0.7201704545454546, best acc is 0.7414772727272727
+epoch: 25 step: 46, loss is 2.5638108253479004
+Train epoch time: 6602.563 ms, per step time: 143.534 ms
+epoch: 25 acc: 0.7428977272727273, best acc is 0.7428977272727273
+epoch: 26 step: 46, loss is 1.9479432106018066
+Train epoch time: 6589.193 ms, per step time: 143.243 ms
+epoch: 26 acc: 0.7585227272727273, best acc is 0.7585227272727273
+epoch: 27 step: 46, loss is 3.129545211791992
+Train epoch time: 6587.074 ms, per step time: 143.197 ms
+epoch: 27 acc: 0.7159090909090909, best acc is 0.7585227272727273
+epoch: 28 step: 46, loss is 2.688995838165283
+Train epoch time: 6592.204 ms, per step time: 143.309 ms
+epoch: 28 acc: 0.7329545454545454, best acc is 0.7585227272727273
+epoch: 29 step: 46, loss is 2.369047164916992
+Train epoch time: 6641.629 ms, per step time: 144.383 ms
+epoch: 29 acc: 0.7215909090909091, best acc is 0.7585227272727273
+epoch: 30 step: 46, loss is 2.163043975830078
+Train epoch time: 6559.059 ms, per step time: 142.588 ms
+epoch: 30 acc: 0.7670454545454546, best acc is 0.7670454545454546
+epoch: 31 step: 46, loss is 2.267021417617798
+Train epoch time: 6641.512 ms, per step time: 144.381 ms
+epoch: 31 acc: 0.7357954545454546, best acc is 0.7670454545454546
+epoch: 32 step: 46, loss is 2.8194847106933594
+Train epoch time: 6566.000 ms, per step time: 142.739 ms
+epoch: 32 acc: 0.7727272727272727, best acc is 0.7727272727272727
+epoch: 33 step: 46, loss is 2.6907031536102295
+Train epoch time: 6609.053 ms, per step time: 143.675 ms
+epoch: 33 acc: 0.7840909090909091, best acc is 0.7840909090909091
+epoch: 34 step: 46, loss is 2.042837619781494
+Train epoch time: 6590.734 ms, per step time: 143.277 ms
+epoch: 34 acc: 0.7982954545454546, best acc is 0.7982954545454546
+epoch: 35 step: 46, loss is 2.1757469177246094
+Train epoch time: 6604.208 ms, per step time: 143.570 ms
+epoch: 35 acc: 0.8082386363636364, best acc is 0.8082386363636364
+epoch: 36 step: 46, loss is 2.720397472381592
+Train epoch time: 6631.164 ms, per step time: 144.156 ms
+epoch: 36 acc: 0.796875, best acc is 0.8082386363636364
+epoch: 37 step: 46, loss is 2.7076621055603027
+Train epoch time: 6594.308 ms, per step time: 143.355 ms
+epoch: 37 acc: 0.8323863636363636, best acc is 0.8323863636363636
+epoch: 38 step: 46, loss is 2.704388380050659
+Train epoch time: 6588.620 ms, per step time: 143.231 ms
+epoch: 38 acc: 0.7826704545454546, best acc is 0.8323863636363636
+epoch: 39 step: 46, loss is 2.4800353050231934
+Train epoch time: 6599.452 ms, per step time: 143.466 ms
+epoch: 39 acc: 0.8068181818181818, best acc is 0.8323863636363636
+epoch: 40 step: 46, loss is 3.2742795944213867
+Train epoch time: 6582.391 ms, per step time: 143.095 ms
+epoch: 40 acc: 0.8096590909090909, best acc is 0.8323863636363636
+epoch: 41 step: 46, loss is 2.462775707244873
+Train epoch time: 6620.249 ms, per step time: 143.918 ms
+epoch: 41 acc: 0.8267045454545454, best acc is 0.8323863636363636
+epoch: 42 step: 46, loss is 2.786106824874878
+Train epoch time: 6558.925 ms, per step time: 142.585 ms
+epoch: 42 acc: 0.8110795454545454, best acc is 0.8323863636363636
+epoch: 43 step: 46, loss is 2.303712844848633
+Train epoch time: 6609.769 ms, per step time: 143.691 ms
+epoch: 43 acc: 0.8025568181818182, best acc is 0.8323863636363636
+epoch: 44 step: 46, loss is 2.6084275245666504
+Train epoch time: 6588.541 ms, per step time: 143.229 ms
+epoch: 44 acc: 0.8167613636363636, best acc is 0.8323863636363636
+epoch: 45 step: 46, loss is 2.8763186931610107
+Train epoch time: 6598.816 ms, per step time: 143.453 ms
+epoch: 45 acc: 0.8025568181818182, best acc is 0.8323863636363636
+epoch: 46 step: 46, loss is 2.532383680343628
+Train epoch time: 6566.181 ms, per step time: 142.743 ms
+epoch: 46 acc: 0.7883522727272727, best acc is 0.8323863636363636
+epoch: 47 step: 46, loss is 3.1135759353637695
+Train epoch time: 6600.181 ms, per step time: 143.482 ms
+epoch: 47 acc: 0.7826704545454546, best acc is 0.8323863636363636
+epoch: 48 step: 46, loss is 2.7989144325256348
+Train epoch time: 6606.769 ms, per step time: 143.625 ms
+epoch: 48 acc: 0.7940340909090909, best acc is 0.8323863636363636
+epoch: 49 step: 46, loss is 2.6167733669281006
+Train epoch time: 6583.515 ms, per step time: 143.120 ms
+epoch: 49 acc: 0.8366477272727273, best acc is 0.8366477272727273
+epoch: 50 step: 46, loss is 1.8059004545211792
+Train epoch time: 6562.097 ms, per step time: 142.654 ms
+epoch: 50 acc: 0.8210227272727273, best acc is 0.8366477272727273
+epoch: 51 step: 46, loss is 2.483555793762207
+Train epoch time: 6590.757 ms, per step time: 143.277 ms
+epoch: 51 acc: 0.8238636363636364, best acc is 0.8366477272727273
+epoch: 52 step: 46, loss is 2.028261184692383
+Train epoch time: 6569.494 ms, per step time: 142.815 ms
+epoch: 52 acc: 0.8181818181818182, best acc is 0.8366477272727273
+epoch: 53 step: 46, loss is 1.5826634168624878
+Train epoch time: 6586.618 ms, per step time: 143.187 ms
+epoch: 53 acc: 0.8011363636363636, best acc is 0.8366477272727273
+epoch: 54 step: 46, loss is 1.676932692527771
+Train epoch time: 6566.866 ms, per step time: 142.758 ms
+epoch: 54 acc: 0.8039772727272727, best acc is 0.8366477272727273
+epoch: 55 step: 46, loss is 2.5380258560180664
+Train epoch time: 6620.505 ms, per step time: 143.924 ms
+epoch: 55 acc: 0.8380681818181818, best acc is 0.8380681818181818
+epoch: 56 step: 46, loss is 1.5028724670410156
+Train epoch time: 6590.523 ms, per step time: 143.272 ms
+epoch: 56 acc: 0.8039772727272727, best acc is 0.8380681818181818
+epoch: 57 step: 46, loss is 2.4955129623413086
+Train epoch time: 6587.610 ms, per step time: 143.209 ms
+epoch: 57 acc: 0.8153409090909091, best acc is 0.8380681818181818
+epoch: 58 step: 46, loss is 1.9850678443908691
+Train epoch time: 6585.301 ms, per step time: 143.159 ms
+epoch: 58 acc: 0.8210227272727273, best acc is 0.8380681818181818
+epoch: 59 step: 46, loss is 2.052485704421997
+Train epoch time: 6619.280 ms, per step time: 143.897 ms
+epoch: 59 acc: 0.8252840909090909, best acc is 0.8380681818181818
+epoch: 60 step: 46, loss is 2.697706937789917
+Train epoch time: 6609.489 ms, per step time: 143.685 ms
+epoch: 60 acc: 0.8295454545454546, best acc is 0.8380681818181818
+epoch: 61 step: 46, loss is 2.5733795166015625
+Train epoch time: 6623.029 ms, per step time: 143.979 ms
+epoch: 61 acc: 0.8181818181818182, best acc is 0.8380681818181818
+epoch: 62 step: 46, loss is 2.846514940261841
+Train epoch time: 6609.181 ms, per step time: 143.678 ms
+epoch: 62 acc: 0.84375, best acc is 0.84375
+epoch: 63 step: 46, loss is 2.6326630115509033
+Train epoch time: 6585.223 ms, per step time: 143.157 ms
+epoch: 63 acc: 0.8096590909090909, best acc is 0.84375
+epoch: 64 step: 46, loss is 2.3871753215789795
+Train epoch time: 6574.921 ms, per step time: 142.933 ms
+epoch: 64 acc: 0.828125, best acc is 0.84375
+epoch: 65 step: 46, loss is 2.0791850090026855
+Train epoch time: 6647.007 ms, per step time: 144.500 ms
+epoch: 65 acc: 0.8252840909090909, best acc is 0.84375
+epoch: 66 step: 46, loss is 3.0188846588134766
+Train epoch time: 6576.060 ms, per step time: 142.958 ms
+epoch: 66 acc: 0.8522727272727273, best acc is 0.8522727272727273
+epoch: 67 step: 46, loss is 2.909210681915283
+Train epoch time: 6601.125 ms, per step time: 143.503 ms
+epoch: 67 acc: 0.8352272727272727, best acc is 0.8522727272727273
+epoch: 68 step: 46, loss is 1.852731704711914
+Train epoch time: 6571.463 ms, per step time: 142.858 ms
+epoch: 68 acc: 0.8011363636363636, best acc is 0.8522727272727273
+epoch: 69 step: 46, loss is 2.4487125873565674
+Train epoch time: 6597.196 ms, per step time: 143.417 ms
+epoch: 69 acc: 0.8011363636363636, best acc is 0.8522727272727273
+epoch: 70 step: 46, loss is 1.6011985540390015
+Train epoch time: 6566.431 ms, per step time: 142.748 ms
+epoch: 70 acc: 0.8352272727272727, best acc is 0.8522727272727273
+epoch: 71 step: 46, loss is 1.9751479625701904
+Train epoch time: 6582.888 ms, per step time: 143.106 ms
+epoch: 71 acc: 0.8224431818181818, best acc is 0.8522727272727273
+epoch: 72 step: 46, loss is 2.3548457622528076
+Train epoch time: 6563.155 ms, per step time: 142.677 ms
+epoch: 72 acc: 0.8494318181818182, best acc is 0.8522727272727273
+epoch: 73 step: 46, loss is 2.5615811347961426
+Train epoch time: 6595.895 ms, per step time: 143.389 ms
+epoch: 73 acc: 0.8352272727272727, best acc is 0.8522727272727273
+epoch: 74 step: 46, loss is 2.0111310482025146
+Train epoch time: 6616.484 ms, per step time: 143.837 ms
+epoch: 74 acc: 0.8323863636363636, best acc is 0.8522727272727273
+epoch: 75 step: 46, loss is 2.513026714324951
+Train epoch time: 6603.230 ms, per step time: 143.548 ms
+epoch: 75 acc: 0.7855113636363636, best acc is 0.8522727272727273
+epoch: 76 step: 46, loss is 2.8819470405578613
+Train epoch time: 6609.463 ms, per step time: 143.684 ms
+epoch: 76 acc: 0.8181818181818182, best acc is 0.8522727272727273
+epoch: 77 step: 46, loss is 1.4181177616119385
+Train epoch time: 6590.690 ms, per step time: 143.276 ms
+epoch: 77 acc: 0.8536931818181818, best acc is 0.8536931818181818
+epoch: 78 step: 46, loss is 1.6410735845565796
+Train epoch time: 6571.881 ms, per step time: 142.867 ms
+epoch: 78 acc: 0.8210227272727273, best acc is 0.8536931818181818
+epoch: 79 step: 46, loss is 1.770890235900879
+Train epoch time: 6604.492 ms, per step time: 143.576 ms
+epoch: 79 acc: 0.8480113636363636, best acc is 0.8536931818181818
+epoch: 80 step: 46, loss is 2.6234989166259766
+Train epoch time: 6558.899 ms, per step time: 142.585 ms
+epoch: 80 acc: 0.8295454545454546, best acc is 0.8536931818181818
+epoch: 81 step: 46, loss is 2.1253535747528076
+Train epoch time: 6637.088 ms, per step time: 144.285 ms
+epoch: 81 acc: 0.8409090909090909, best acc is 0.8536931818181818
+epoch: 82 step: 46, loss is 2.5445616245269775
+Train epoch time: 6573.176 ms, per step time: 142.895 ms
+epoch: 82 acc: 0.8636363636363636, best acc is 0.8636363636363636
+epoch: 83 step: 46, loss is 2.1786584854125977
+Train epoch time: 6632.484 ms, per step time: 144.184 ms
+epoch: 83 acc: 0.8238636363636364, best acc is 0.8636363636363636
+epoch: 84 step: 46, loss is 2.2114384174346924
+Train epoch time: 6556.289 ms, per step time: 142.528 ms
+epoch: 84 acc: 0.8196022727272727, best acc is 0.8636363636363636
+epoch: 85 step: 46, loss is 2.5257325172424316
+Train epoch time: 6592.348 ms, per step time: 143.312 ms
+epoch: 85 acc: 0.8267045454545454, best acc is 0.8636363636363636
+epoch: 86 step: 46, loss is 2.5313501358032227
+Train epoch time: 6565.554 ms, per step time: 142.729 ms
+epoch: 86 acc: 0.8664772727272727, best acc is 0.8664772727272727
+epoch: 87 step: 46, loss is 1.9522500038146973
+Train epoch time: 6598.330 ms, per step time: 143.442 ms
+epoch: 87 acc: 0.8366477272727273, best acc is 0.8664772727272727
+epoch: 88 step: 46, loss is 2.6729722023010254
+Train epoch time: 6560.463 ms, per step time: 142.619 ms
+epoch: 88 acc: 0.8423295454545454, best acc is 0.8664772727272727
+epoch: 89 step: 46, loss is 1.9333057403564453
+Train epoch time: 6585.207 ms, per step time: 143.157 ms
+epoch: 89 acc: 0.8536931818181818, best acc is 0.8664772727272727
+epoch: 90 step: 46, loss is 2.737882614135742
+Train epoch time: 6558.825 ms, per step time: 142.583 ms
+epoch: 90 acc: 0.8380681818181818, best acc is 0.8664772727272727
+epoch: 91 step: 46, loss is 2.7397396564483643
+Train epoch time: 6587.648 ms, per step time: 143.210 ms
+epoch: 91 acc: 0.8423295454545454, best acc is 0.8664772727272727
+epoch: 92 step: 46, loss is 2.6667323112487793
+Train epoch time: 6560.667 ms, per step time: 142.623 ms
+epoch: 92 acc: 0.8764204545454546, best acc is 0.8764204545454546
+epoch: 93 step: 46, loss is 2.859863758087158
+Train epoch time: 6595.678 ms, per step time: 143.384 ms
+epoch: 93 acc: 0.8409090909090909, best acc is 0.8764204545454546
+epoch: 94 step: 46, loss is 2.1786599159240723
+Train epoch time: 6568.754 ms, per step time: 142.799 ms
+epoch: 94 acc: 0.8551136363636364, best acc is 0.8764204545454546
+epoch: 95 step: 46, loss is 2.882566452026367
+Train epoch time: 6613.694 ms, per step time: 143.776 ms
+epoch: 95 acc: 0.8607954545454546, best acc is 0.8764204545454546
+epoch: 96 step: 46, loss is 2.7495508193969727
+Train epoch time: 6554.707 ms, per step time: 142.494 ms
+epoch: 96 acc: 0.8579545454545454, best acc is 0.8764204545454546
+epoch: 97 step: 46, loss is 2.8428955078125
+Train epoch time: 6579.791 ms, per step time: 143.039 ms
+epoch: 97 acc: 0.8650568181818182, best acc is 0.8764204545454546
+epoch: 98 step: 46, loss is 1.395824909210205
+Train epoch time: 6561.138 ms, per step time: 142.633 ms
+epoch: 98 acc: 0.8806818181818182, best acc is 0.8806818181818182
+epoch: 99 step: 46, loss is 2.2530765533447266
+Train epoch time: 6605.531 ms, per step time: 143.599 ms
+epoch: 99 acc: 0.8522727272727273, best acc is 0.8806818181818182
+epoch: 100 step: 46, loss is 2.5012354850769043
+Train epoch time: 6605.604 ms, per step time: 143.600 ms
+epoch: 100 acc: 0.8579545454545454, best acc is 0.8806818181818182
+epoch: 101 step: 46, loss is 2.4241814613342285
+Train epoch time: 6593.682 ms, per step time: 143.341 ms
+epoch: 101 acc: 0.8707386363636364, best acc is 0.8806818181818182
+epoch: 102 step: 46, loss is 2.5119681358337402
+Train epoch time: 6556.944 ms, per step time: 142.542 ms
+epoch: 102 acc: 0.8451704545454546, best acc is 0.8806818181818182
+epoch: 103 step: 46, loss is 1.7220849990844727
+Train epoch time: 6648.194 ms, per step time: 144.526 ms
+epoch: 103 acc: 0.8508522727272727, best acc is 0.8806818181818182
+epoch: 104 step: 46, loss is 2.932892322540283
+Train epoch time: 6563.138 ms, per step time: 142.677 ms
+epoch: 104 acc: 0.8707386363636364, best acc is 0.8806818181818182
+epoch: 105 step: 46, loss is 2.3894729614257812
+Train epoch time: 6603.542 ms, per step time: 143.555 ms
+epoch: 105 acc: 0.8451704545454546, best acc is 0.8806818181818182
+epoch: 106 step: 46, loss is 2.6365468502044678
+Train epoch time: 6576.842 ms, per step time: 142.975 ms
+epoch: 106 acc: 0.8622159090909091, best acc is 0.8806818181818182
+epoch: 107 step: 46, loss is 2.337331533432007
+Train epoch time: 6584.437 ms, per step time: 143.140 ms
+epoch: 107 acc: 0.8451704545454546, best acc is 0.8806818181818182
+epoch: 108 step: 46, loss is 2.0533180236816406
+Train epoch time: 6561.853 ms, per step time: 142.649 ms
+epoch: 108 acc: 0.8494318181818182, best acc is 0.8806818181818182
+epoch: 109 step: 46, loss is 2.6814565658569336
+Train epoch time: 6576.198 ms, per step time: 142.961 ms
+epoch: 109 acc: 0.8522727272727273, best acc is 0.8806818181818182
+epoch: 110 step: 46, loss is 2.576842784881592
+Train epoch time: 6558.197 ms, per step time: 142.570 ms
+epoch: 110 acc: 0.8636363636363636, best acc is 0.8806818181818182
+epoch: 111 step: 46, loss is 2.538944721221924
+Train epoch time: 6608.203 ms, per step time: 143.657 ms
+epoch: 111 acc: 0.8494318181818182, best acc is 0.8806818181818182
+epoch: 112 step: 46, loss is 2.8417820930480957
+Train epoch time: 6566.896 ms, per step time: 142.759 ms
+epoch: 112 acc: 0.8607954545454546, best acc is 0.8806818181818182
+epoch: 113 step: 46, loss is 1.8981561660766602
+Train epoch time: 6576.880 ms, per step time: 142.976 ms
+epoch: 113 acc: 0.8636363636363636, best acc is 0.8806818181818182
+epoch: 114 step: 46, loss is 2.4108481407165527
+Train epoch time: 6587.703 ms, per step time: 143.211 ms
+epoch: 114 acc: 0.8693181818181818, best acc is 0.8806818181818182
+epoch: 115 step: 46, loss is 2.000976085662842
+Train epoch time: 6608.059 ms, per step time: 143.653 ms
+epoch: 115 acc: 0.8536931818181818, best acc is 0.8806818181818182
+epoch: 116 step: 46, loss is 1.863893747329712
+Train epoch time: 6612.538 ms, per step time: 143.751 ms
+epoch: 116 acc: 0.8451704545454546, best acc is 0.8806818181818182
+epoch: 117 step: 46, loss is 2.2415623664855957
+Train epoch time: 6587.848 ms, per step time: 143.214 ms
+epoch: 117 acc: 0.8622159090909091, best acc is 0.8806818181818182
+epoch: 118 step: 46, loss is 2.077561616897583
+Train epoch time: 6570.200 ms, per step time: 142.830 ms
+epoch: 118 acc: 0.8849431818181818, best acc is 0.8849431818181818
+epoch: 119 step: 46, loss is 1.8260841369628906
+Train epoch time: 6582.767 ms, per step time: 143.104 ms
+epoch: 119 acc: 0.8494318181818182, best acc is 0.8849431818181818
+epoch: 120 step: 46, loss is 1.8452088832855225
+Train epoch time: 6562.849 ms, per step time: 142.671 ms
+epoch: 120 acc: 0.8607954545454546, best acc is 0.8849431818181818
+epoch: 121 step: 46, loss is 1.6191694736480713
+Train epoch time: 6586.104 ms, per step time: 143.176 ms
+epoch: 121 acc: 0.8707386363636364, best acc is 0.8849431818181818
+epoch: 122 step: 46, loss is 1.4178982973098755
+Train epoch time: 6583.978 ms, per step time: 143.130 ms
+epoch: 122 acc: 0.8707386363636364, best acc is 0.8849431818181818
+epoch: 123 step: 46, loss is 1.9836024045944214
+Train epoch time: 6608.827 ms, per step time: 143.670 ms
+epoch: 123 acc: 0.8622159090909091, best acc is 0.8849431818181818
+epoch: 124 step: 46, loss is 2.4231038093566895
+Train epoch time: 6577.159 ms, per step time: 142.982 ms
+epoch: 124 acc: 0.8707386363636364, best acc is 0.8849431818181818
+epoch: 125 step: 46, loss is 1.2411885261535645
+Train epoch time: 6588.654 ms, per step time: 143.232 ms
+epoch: 125 acc: 0.8721590909090909, best acc is 0.8849431818181818
+epoch: 126 step: 46, loss is 2.657212734222412
+Train epoch time: 6563.947 ms, per step time: 142.694 ms
+epoch: 126 acc: 0.8707386363636364, best acc is 0.8849431818181818
+epoch: 127 step: 46, loss is 2.2188806533813477
+Train epoch time: 6585.178 ms, per step time: 143.156 ms
+epoch: 127 acc: 0.8778409090909091, best acc is 0.8849431818181818
+epoch: 128 step: 46, loss is 1.7936663627624512
+Train epoch time: 6579.401 ms, per step time: 143.030 ms
+epoch: 128 acc: 0.8721590909090909, best acc is 0.8849431818181818
+epoch: 129 step: 46, loss is 1.37066650390625
+Train epoch time: 6622.270 ms, per step time: 143.962 ms
+epoch: 129 acc: 0.875, best acc is 0.8849431818181818
+epoch: 130 step: 46, loss is 1.6784024238586426
+Train epoch time: 6565.724 ms, per step time: 142.733 ms
+epoch: 130 acc: 0.8821022727272727, best acc is 0.8849431818181818
+epoch: 131 step: 46, loss is 2.4437193870544434
+Train epoch time: 6577.566 ms, per step time: 142.991 ms
+epoch: 131 acc: 0.8664772727272727, best acc is 0.8849431818181818
+epoch: 132 step: 46, loss is 2.2433114051818848
+Train epoch time: 6558.866 ms, per step time: 142.584 ms
+epoch: 132 acc: 0.8849431818181818, best acc is 0.8849431818181818
+epoch: 133 step: 46, loss is 2.2516448497772217
+Train epoch time: 6601.082 ms, per step time: 143.502 ms
+epoch: 133 acc: 0.8664772727272727, best acc is 0.8849431818181818
+epoch: 134 step: 46, loss is 1.4348641633987427
+Train epoch time: 6573.555 ms, per step time: 142.903 ms
+epoch: 134 acc: 0.8650568181818182, best acc is 0.8849431818181818
+epoch: 135 step: 46, loss is 2.36639404296875
+Train epoch time: 6580.319 ms, per step time: 143.050 ms
+epoch: 135 acc: 0.8835227272727273, best acc is 0.8849431818181818
+epoch: 136 step: 46, loss is 2.237940788269043
+Train epoch time: 6572.979 ms, per step time: 142.891 ms
+epoch: 136 acc: 0.875, best acc is 0.8849431818181818
+epoch: 137 step: 46, loss is 2.4074158668518066
+Train epoch time: 6629.781 ms, per step time: 144.126 ms
+epoch: 137 acc: 0.8636363636363636, best acc is 0.8849431818181818
+epoch: 138 step: 46, loss is 2.275242805480957
+Train epoch time: 6555.572 ms, per step time: 142.512 ms
+epoch: 138 acc: 0.8735795454545454, best acc is 0.8849431818181818
+epoch: 139 step: 46, loss is 2.354896068572998
+Train epoch time: 6582.039 ms, per step time: 143.088 ms
+epoch: 139 acc: 0.8778409090909091, best acc is 0.8849431818181818
+epoch: 140 step: 46, loss is 1.8536864519119263
+Train epoch time: 6582.651 ms, per step time: 143.101 ms
+epoch: 140 acc: 0.8835227272727273, best acc is 0.8849431818181818
+epoch: 141 step: 46, loss is 2.0258476734161377
+Train epoch time: 6588.735 ms, per step time: 143.233 ms
+epoch: 141 acc: 0.8735795454545454, best acc is 0.8849431818181818
+epoch: 142 step: 46, loss is 1.608441710472107
+Train epoch time: 6571.954 ms, per step time: 142.869 ms
+epoch: 142 acc: 0.8920454545454546, best acc is 0.8920454545454546
+epoch: 143 step: 46, loss is 2.245358467102051
+Train epoch time: 6627.407 ms, per step time: 144.074 ms
+epoch: 143 acc: 0.8821022727272727, best acc is 0.8920454545454546
+epoch: 144 step: 46, loss is 1.1313245296478271
+Train epoch time: 6570.998 ms, per step time: 142.848 ms
+epoch: 144 acc: 0.890625, best acc is 0.8920454545454546
+epoch: 145 step: 46, loss is 2.521913528442383
+Train epoch time: 6591.819 ms, per step time: 143.300 ms
+epoch: 145 acc: 0.8778409090909091, best acc is 0.8920454545454546
+epoch: 146 step: 46, loss is 1.9928244352340698
+Train epoch time: 6563.122 ms, per step time: 142.677 ms
+epoch: 146 acc: 0.8892045454545454, best acc is 0.8920454545454546
+epoch: 147 step: 46, loss is 2.422241449356079
+Train epoch time: 6614.695 ms, per step time: 143.798 ms
+epoch: 147 acc: 0.8892045454545454, best acc is 0.8920454545454546
+epoch: 148 step: 46, loss is 2.29710054397583
+Train epoch time: 6573.691 ms, per step time: 142.906 ms
+epoch: 148 acc: 0.8963068181818182, best acc is 0.8963068181818182
+epoch: 149 step: 46, loss is 1.8616628646850586
+Train epoch time: 6594.268 ms, per step time: 143.354 ms
+epoch: 149 acc: 0.8721590909090909, best acc is 0.8963068181818182
+epoch: 150 step: 46, loss is 1.4671649932861328
+Train epoch time: 6564.897 ms, per step time: 142.715 ms
+epoch: 150 acc: 0.8806818181818182, best acc is 0.8963068181818182
+epoch: 151 step: 46, loss is 2.420863151550293
+Train epoch time: 6598.013 ms, per step time: 143.435 ms
+epoch: 151 acc: 0.8778409090909091, best acc is 0.8963068181818182
+epoch: 152 step: 46, loss is 1.8272981643676758
+Train epoch time: 6595.212 ms, per step time: 143.374 ms
+epoch: 152 acc: 0.8821022727272727, best acc is 0.8963068181818182
+epoch: 153 step: 46, loss is 1.3678343296051025
+Train epoch time: 6590.759 ms, per step time: 143.277 ms
+epoch: 153 acc: 0.9005681818181818, best acc is 0.9005681818181818
+epoch: 154 step: 46, loss is 1.5139497518539429
+Train epoch time: 6595.538 ms, per step time: 143.381 ms
+epoch: 154 acc: 0.8764204545454546, best acc is 0.9005681818181818
+epoch: 155 step: 46, loss is 1.800140380859375
+Train epoch time: 6630.775 ms, per step time: 144.147 ms
+epoch: 155 acc: 0.8735795454545454, best acc is 0.9005681818181818
+epoch: 156 step: 46, loss is 2.1780223846435547
+Train epoch time: 6619.183 ms, per step time: 143.895 ms
+epoch: 156 acc: 0.8821022727272727, best acc is 0.9005681818181818
+epoch: 157 step: 46, loss is 1.686997890472412
+Train epoch time: 6587.880 ms, per step time: 143.215 ms
+epoch: 157 acc: 0.8920454545454546, best acc is 0.9005681818181818
+epoch: 158 step: 46, loss is 2.5204110145568848
+Train epoch time: 6560.655 ms, per step time: 142.623 ms
+epoch: 158 acc: 0.90625, best acc is 0.90625
+epoch: 159 step: 46, loss is 1.9852080345153809
+Train epoch time: 6637.955 ms, per step time: 144.303 ms
+epoch: 159 acc: 0.8821022727272727, best acc is 0.90625
+epoch: 160 step: 46, loss is 2.555040121078491
+Train epoch time: 6567.008 ms, per step time: 142.761 ms
+epoch: 160 acc: 0.8849431818181818, best acc is 0.90625
+epoch: 161 step: 46, loss is 1.3184043169021606
+Train epoch time: 6585.161 ms, per step time: 143.156 ms
+epoch: 161 acc: 0.8806818181818182, best acc is 0.90625
+epoch: 162 step: 46, loss is 2.196643352508545
+Train epoch time: 6578.384 ms, per step time: 143.008 ms
+epoch: 162 acc: 0.8792613636363636, best acc is 0.90625
+epoch: 163 step: 46, loss is 2.2875053882598877
+Train epoch time: 6604.556 ms, per step time: 143.577 ms
+epoch: 163 acc: 0.8821022727272727, best acc is 0.90625
+epoch: 164 step: 46, loss is 1.5211973190307617
+Train epoch time: 6560.453 ms, per step time: 142.619 ms
+epoch: 164 acc: 0.8735795454545454, best acc is 0.90625
+epoch: 165 step: 46, loss is 2.4043917655944824
+Train epoch time: 6592.652 ms, per step time: 143.319 ms
+epoch: 165 acc: 0.8764204545454546, best acc is 0.90625
+epoch: 166 step: 46, loss is 2.223794460296631
+Train epoch time: 6593.800 ms, per step time: 143.343 ms
+epoch: 166 acc: 0.8835227272727273, best acc is 0.90625
+epoch: 167 step: 46, loss is 2.164731025695801
+Train epoch time: 6592.869 ms, per step time: 143.323 ms
+epoch: 167 acc: 0.8877840909090909, best acc is 0.90625
+epoch: 168 step: 46, loss is 1.4640178680419922
+Train epoch time: 6582.998 ms, per step time: 143.109 ms
+epoch: 168 acc: 0.8934659090909091, best acc is 0.90625
+epoch: 169 step: 46, loss is 1.9162838459014893
+Train epoch time: 6587.256 ms, per step time: 143.201 ms
+epoch: 169 acc: 0.8977272727272727, best acc is 0.90625
+epoch: 170 step: 46, loss is 1.7805060148239136
+Train epoch time: 6581.409 ms, per step time: 143.074 ms
+epoch: 170 acc: 0.8991477272727273, best acc is 0.90625
+epoch: 171 step: 46, loss is 1.622431993484497
+Train epoch time: 6586.501 ms, per step time: 143.185 ms
+epoch: 171 acc: 0.8735795454545454, best acc is 0.90625
+epoch: 172 step: 46, loss is 2.6010797023773193
+Train epoch time: 6588.220 ms, per step time: 143.222 ms
+epoch: 172 acc: 0.9034090909090909, best acc is 0.90625
+epoch: 173 step: 46, loss is 2.403317928314209
+Train epoch time: 6603.319 ms, per step time: 143.550 ms
+epoch: 173 acc: 0.9048295454545454, best acc is 0.90625
+epoch: 174 step: 46, loss is 1.9920117855072021
+Train epoch time: 6570.838 ms, per step time: 142.844 ms
+epoch: 174 acc: 0.8863636363636364, best acc is 0.90625
+epoch: 175 step: 46, loss is 2.3444674015045166
+Train epoch time: 6599.040 ms, per step time: 143.457 ms
+epoch: 175 acc: 0.9019886363636364, best acc is 0.90625
+epoch: 176 step: 46, loss is 1.6599963903427124
+Train epoch time: 6602.932 ms, per step time: 143.542 ms
+epoch: 176 acc: 0.8849431818181818, best acc is 0.90625
+epoch: 177 step: 46, loss is 2.3365228176116943
+Train epoch time: 6584.990 ms, per step time: 143.152 ms
+epoch: 177 acc: 0.8778409090909091, best acc is 0.90625
+epoch: 178 step: 46, loss is 1.3377114534378052
+Train epoch time: 6558.074 ms, per step time: 142.567 ms
+epoch: 178 acc: 0.8877840909090909, best acc is 0.90625
+epoch: 179 step: 46, loss is 1.0231661796569824
+Train epoch time: 6580.552 ms, per step time: 143.055 ms
+epoch: 179 acc: 0.8863636363636364, best acc is 0.90625
+epoch: 180 step: 46, loss is 1.4491965770721436
+Train epoch time: 6558.985 ms, per step time: 142.587 ms
+epoch: 180 acc: 0.8920454545454546, best acc is 0.90625
+epoch: 181 step: 46, loss is 2.4163150787353516
+Train epoch time: 6630.286 ms, per step time: 144.137 ms
+epoch: 181 acc: 0.8948863636363636, best acc is 0.90625
+epoch: 182 step: 46, loss is 1.2900936603546143
+Train epoch time: 6559.896 ms, per step time: 142.606 ms
+epoch: 182 acc: 0.8920454545454546, best acc is 0.90625
+epoch: 183 step: 46, loss is 1.8895885944366455
+Train epoch time: 6593.141 ms, per step time: 143.329 ms
+epoch: 183 acc: 0.8806818181818182, best acc is 0.90625
+epoch: 184 step: 46, loss is 2.4577317237854004
+Train epoch time: 6562.638 ms, per step time: 142.666 ms
+epoch: 184 acc: 0.8863636363636364, best acc is 0.90625
+epoch: 185 step: 46, loss is 1.9533495903015137
+Train epoch time: 6587.378 ms, per step time: 143.204 ms
+epoch: 185 acc: 0.8920454545454546, best acc is 0.90625
+epoch: 186 step: 46, loss is 1.113124132156372
+Train epoch time: 6565.953 ms, per step time: 142.738 ms
+epoch: 186 acc: 0.8948863636363636, best acc is 0.90625
+epoch: 187 step: 46, loss is 1.7345149517059326
+Train epoch time: 6640.966 ms, per step time: 144.369 ms
+epoch: 187 acc: 0.8835227272727273, best acc is 0.90625
+epoch: 188 step: 46, loss is 1.888307809829712
+Train epoch time: 6562.994 ms, per step time: 142.674 ms
+epoch: 188 acc: 0.8948863636363636, best acc is 0.90625
+epoch: 189 step: 46, loss is 2.3986730575561523
+Train epoch time: 6620.591 ms, per step time: 143.926 ms
+epoch: 189 acc: 0.8948863636363636, best acc is 0.90625
+epoch: 190 step: 46, loss is 1.8736474514007568
+Train epoch time: 6563.165 ms, per step time: 142.678 ms
+epoch: 190 acc: 0.8792613636363636, best acc is 0.90625
+epoch: 191 step: 46, loss is 1.281057357788086
+Train epoch time: 6600.539 ms, per step time: 143.490 ms
+epoch: 191 acc: 0.9034090909090909, best acc is 0.90625
+epoch: 192 step: 46, loss is 2.040539264678955
+Train epoch time: 6567.673 ms, per step time: 142.776 ms
+epoch: 192 acc: 0.9119318181818182, best acc is 0.9119318181818182
+epoch: 193 step: 46, loss is 1.9423454999923706
+Train epoch time: 6592.343 ms, per step time: 143.312 ms
+epoch: 193 acc: 0.8934659090909091, best acc is 0.9119318181818182
+epoch: 194 step: 46, loss is 1.882987380027771
+Train epoch time: 6569.890 ms, per step time: 142.824 ms
+epoch: 194 acc: 0.9034090909090909, best acc is 0.9119318181818182
+epoch: 195 step: 46, loss is 1.628332257270813
+Train epoch time: 6583.760 ms, per step time: 143.125 ms
+epoch: 195 acc: 0.9076704545454546, best acc is 0.9119318181818182
+epoch: 196 step: 46, loss is 1.3425287008285522
+Train epoch time: 6560.587 ms, per step time: 142.621 ms
+epoch: 196 acc: 0.90625, best acc is 0.9119318181818182
+epoch: 197 step: 46, loss is 1.1983916759490967
+Train epoch time: 6590.815 ms, per step time: 143.279 ms
+epoch: 197 acc: 0.9005681818181818, best acc is 0.9119318181818182
+epoch: 198 step: 46, loss is 1.0551177263259888
+Train epoch time: 6561.200 ms, per step time: 142.635 ms
+epoch: 198 acc: 0.9105113636363636, best acc is 0.9119318181818182
+epoch: 199 step: 46, loss is 2.3541131019592285
+Train epoch time: 6587.754 ms, per step time: 143.212 ms
+epoch: 199 acc: 0.8977272727272727, best acc is 0.9119318181818182
+epoch: 200 step: 46, loss is 1.6395231485366821
+Train epoch time: 6572.594 ms, per step time: 142.882 ms
+epoch: 200 acc: 0.9034090909090909, best acc is 0.9119318181818182
+epoch: 201 step: 46, loss is 1.4517979621887207
+Train epoch time: 6595.646 ms, per step time: 143.384 ms
+epoch: 201 acc: 0.9005681818181818, best acc is 0.9119318181818182
+epoch: 202 step: 46, loss is 1.8287396430969238
+Train epoch time: 6563.603 ms, per step time: 142.687 ms
+epoch: 202 acc: 0.90625, best acc is 0.9119318181818182
+epoch: 203 step: 46, loss is 1.1206386089324951
+Train epoch time: 6588.318 ms, per step time: 143.224 ms
+epoch: 203 acc: 0.8934659090909091, best acc is 0.9119318181818182
+epoch: 204 step: 46, loss is 2.1255321502685547
+Train epoch time: 6580.728 ms, per step time: 143.059 ms
+epoch: 204 acc: 0.9048295454545454, best acc is 0.9119318181818182
+epoch: 205 step: 46, loss is 1.3680379390716553
+Train epoch time: 6584.163 ms, per step time: 143.134 ms
+epoch: 205 acc: 0.9105113636363636, best acc is 0.9119318181818182
+epoch: 206 step: 46, loss is 1.999531626701355
+Train epoch time: 6567.240 ms, per step time: 142.766 ms
+epoch: 206 acc: 0.90625, best acc is 0.9119318181818182
+epoch: 207 step: 46, loss is 0.9614927768707275
+Train epoch time: 6604.129 ms, per step time: 143.568 ms
+epoch: 207 acc: 0.8963068181818182, best acc is 0.9119318181818182
+epoch: 208 step: 46, loss is 1.536108374595642
+Train epoch time: 6624.946 ms, per step time: 144.021 ms
+epoch: 208 acc: 0.9090909090909091, best acc is 0.9119318181818182
+epoch: 209 step: 46, loss is 1.9297951459884644
+Train epoch time: 6589.821 ms, per step time: 143.257 ms
+epoch: 209 acc: 0.8963068181818182, best acc is 0.9119318181818182
+epoch: 210 step: 46, loss is 2.036858081817627
+Train epoch time: 6577.700 ms, per step time: 142.993 ms
+epoch: 210 acc: 0.9119318181818182, best acc is 0.9119318181818182
+epoch: 211 step: 46, loss is 1.2558860778808594
+Train epoch time: 6592.325 ms, per step time: 143.311 ms
+epoch: 211 acc: 0.9147727272727273, best acc is 0.9147727272727273
+epoch: 212 step: 46, loss is 1.8946051597595215
+Train epoch time: 6561.474 ms, per step time: 142.641 ms
+epoch: 212 acc: 0.8977272727272727, best acc is 0.9147727272727273
+epoch: 213 step: 46, loss is 2.063760757446289
+Train epoch time: 6603.897 ms, per step time: 143.563 ms
+epoch: 213 acc: 0.9034090909090909, best acc is 0.9147727272727273
+epoch: 214 step: 46, loss is 1.9437508583068848
+Train epoch time: 6568.393 ms, per step time: 142.791 ms
+epoch: 214 acc: 0.9048295454545454, best acc is 0.9147727272727273
+epoch: 215 step: 46, loss is 2.177393913269043
+Train epoch time: 6592.872 ms, per step time: 143.323 ms
+epoch: 215 acc: 0.8963068181818182, best acc is 0.9147727272727273
+epoch: 216 step: 46, loss is 1.0280793905258179
+Train epoch time: 6560.527 ms, per step time: 142.620 ms
+epoch: 216 acc: 0.9019886363636364, best acc is 0.9147727272727273
+epoch: 217 step: 46, loss is 1.2425010204315186
+Train epoch time: 6592.878 ms, per step time: 143.323 ms
+epoch: 217 acc: 0.8934659090909091, best acc is 0.9147727272727273
+epoch: 218 step: 46, loss is 1.4415817260742188
+Train epoch time: 6565.738 ms, per step time: 142.733 ms
+epoch: 218 acc: 0.9019886363636364, best acc is 0.9147727272727273
+epoch: 219 step: 46, loss is 2.0662055015563965
+Train epoch time: 6628.540 ms, per step time: 144.099 ms
+epoch: 219 acc: 0.9034090909090909, best acc is 0.9147727272727273
+epoch: 220 step: 46, loss is 1.8326666355133057
+Train epoch time: 6561.536 ms, per step time: 142.642 ms
+epoch: 220 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 221 step: 46, loss is 2.1222925186157227
+Train epoch time: 6591.099 ms, per step time: 143.285 ms
+epoch: 221 acc: 0.9048295454545454, best acc is 0.9147727272727273
+epoch: 222 step: 46, loss is 2.127383232116699
+Train epoch time: 6575.934 ms, per step time: 142.955 ms
+epoch: 222 acc: 0.8977272727272727, best acc is 0.9147727272727273
+epoch: 223 step: 46, loss is 1.619011640548706
+Train epoch time: 6608.233 ms, per step time: 143.657 ms
+epoch: 223 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 224 step: 46, loss is 1.7538951635360718
+Train epoch time: 6570.844 ms, per step time: 142.844 ms
+epoch: 224 acc: 0.8948863636363636, best acc is 0.9147727272727273
+epoch: 225 step: 46, loss is 1.2716937065124512
+Train epoch time: 6591.539 ms, per step time: 143.294 ms
+epoch: 225 acc: 0.9105113636363636, best acc is 0.9147727272727273
+epoch: 226 step: 46, loss is 2.0325539112091064
+Train epoch time: 6569.806 ms, per step time: 142.822 ms
+epoch: 226 acc: 0.9048295454545454, best acc is 0.9147727272727273
+epoch: 227 step: 46, loss is 1.9693586826324463
+Train epoch time: 6585.898 ms, per step time: 143.172 ms
+epoch: 227 acc: 0.9019886363636364, best acc is 0.9147727272727273
+epoch: 228 step: 46, loss is 1.0549678802490234
+Train epoch time: 6566.240 ms, per step time: 142.744 ms
+epoch: 228 acc: 0.9147727272727273, best acc is 0.9147727272727273
+epoch: 229 step: 46, loss is 2.36541748046875
+Train epoch time: 6585.451 ms, per step time: 143.162 ms
+epoch: 229 acc: 0.9005681818181818, best acc is 0.9147727272727273
+epoch: 230 step: 46, loss is 1.0934675931930542
+Train epoch time: 6600.896 ms, per step time: 143.498 ms
+epoch: 230 acc: 0.9119318181818182, best acc is 0.9147727272727273
+epoch: 231 step: 46, loss is 1.6449060440063477
+Train epoch time: 6574.768 ms, per step time: 142.930 ms
+epoch: 231 acc: 0.9034090909090909, best acc is 0.9147727272727273
+epoch: 232 step: 46, loss is 2.0247960090637207
+Train epoch time: 6563.001 ms, per step time: 142.674 ms
+epoch: 232 acc: 0.90625, best acc is 0.9147727272727273
+epoch: 233 step: 46, loss is 1.0558457374572754
+Train epoch time: 6605.706 ms, per step time: 143.602 ms
+epoch: 233 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 234 step: 46, loss is 1.654015302658081
+Train epoch time: 6566.203 ms, per step time: 142.744 ms
+epoch: 234 acc: 0.90625, best acc is 0.9147727272727273
+epoch: 235 step: 46, loss is 2.199089527130127
+Train epoch time: 6588.224 ms, per step time: 143.222 ms
+epoch: 235 acc: 0.9019886363636364, best acc is 0.9147727272727273
+epoch: 236 step: 46, loss is 1.8378794193267822
+Train epoch time: 6558.291 ms, per step time: 142.572 ms
+epoch: 236 acc: 0.9019886363636364, best acc is 0.9147727272727273
+epoch: 237 step: 46, loss is 1.770668864250183
+Train epoch time: 6584.579 ms, per step time: 143.143 ms
+epoch: 237 acc: 0.8892045454545454, best acc is 0.9147727272727273
+epoch: 238 step: 46, loss is 1.9311583042144775
+Train epoch time: 6613.664 ms, per step time: 143.775 ms
+epoch: 238 acc: 0.90625, best acc is 0.9147727272727273
+epoch: 239 step: 46, loss is 1.4677321910858154
+Train epoch time: 6582.756 ms, per step time: 143.103 ms
+epoch: 239 acc: 0.8977272727272727, best acc is 0.9147727272727273
+epoch: 240 step: 46, loss is 1.3383839130401611
+Train epoch time: 6576.169 ms, per step time: 142.960 ms
+epoch: 240 acc: 0.9105113636363636, best acc is 0.9147727272727273
+epoch: 241 step: 46, loss is 1.9705723524093628
+Train epoch time: 6576.906 ms, per step time: 142.976 ms
+epoch: 241 acc: 0.9119318181818182, best acc is 0.9147727272727273
+epoch: 242 step: 46, loss is 1.1992771625518799
+Train epoch time: 6564.571 ms, per step time: 142.708 ms
+epoch: 242 acc: 0.9048295454545454, best acc is 0.9147727272727273
+epoch: 243 step: 46, loss is 2.1869423389434814
+Train epoch time: 6585.423 ms, per step time: 143.161 ms
+epoch: 243 acc: 0.9005681818181818, best acc is 0.9147727272727273
+epoch: 244 step: 46, loss is 1.6381196975708008
+Train epoch time: 6573.584 ms, per step time: 142.904 ms
+epoch: 244 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 245 step: 46, loss is 1.5806000232696533
+Train epoch time: 6639.312 ms, per step time: 144.333 ms
+epoch: 245 acc: 0.90625, best acc is 0.9147727272727273
+epoch: 246 step: 46, loss is 1.3166131973266602
+Train epoch time: 6562.153 ms, per step time: 142.655 ms
+epoch: 246 acc: 0.9048295454545454, best acc is 0.9147727272727273
+epoch: 247 step: 46, loss is 1.5640162229537964
+Train epoch time: 6585.323 ms, per step time: 143.159 ms
+epoch: 247 acc: 0.9119318181818182, best acc is 0.9147727272727273
+epoch: 248 step: 46, loss is 1.9047187566757202
+Train epoch time: 6573.370 ms, per step time: 142.899 ms
+epoch: 248 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 249 step: 46, loss is 1.5834472179412842
+Train epoch time: 6580.728 ms, per step time: 143.059 ms
+epoch: 249 acc: 0.9119318181818182, best acc is 0.9147727272727273
+epoch: 250 step: 46, loss is 1.7555992603302002
+Train epoch time: 6608.541 ms, per step time: 143.664 ms
+epoch: 250 acc: 0.9133522727272727, best acc is 0.9147727272727273
+epoch: 251 step: 46, loss is 2.0097155570983887
+Train epoch time: 6600.382 ms, per step time: 143.487 ms
+epoch: 251 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 252 step: 46, loss is 1.8708727359771729
+Train epoch time: 6590.386 ms, per step time: 143.269 ms
+epoch: 252 acc: 0.9119318181818182, best acc is 0.9147727272727273
+epoch: 253 step: 46, loss is 1.5488812923431396
+Train epoch time: 6631.245 ms, per step time: 144.158 ms
+epoch: 253 acc: 0.9119318181818182, best acc is 0.9147727272727273
+epoch: 254 step: 46, loss is 1.4920086860656738
+Train epoch time: 6629.991 ms, per step time: 144.130 ms
+epoch: 254 acc: 0.9133522727272727, best acc is 0.9147727272727273
+epoch: 255 step: 46, loss is 1.676525592803955
+Train epoch time: 6642.146 ms, per step time: 144.394 ms
+epoch: 255 acc: 0.9133522727272727, best acc is 0.9147727272727273
+epoch: 256 step: 46, loss is 1.9177122116088867
+Train epoch time: 6620.040 ms, per step time: 143.914 ms
+epoch: 256 acc: 0.9105113636363636, best acc is 0.9147727272727273
+epoch: 257 step: 46, loss is 1.6433172225952148
+Train epoch time: 6652.704 ms, per step time: 144.624 ms
+epoch: 257 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 258 step: 46, loss is 1.1452864408493042
+Train epoch time: 6622.275 ms, per step time: 143.962 ms
+epoch: 258 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 259 step: 46, loss is 1.355229139328003
+Train epoch time: 6638.257 ms, per step time: 144.310 ms
+epoch: 259 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 260 step: 46, loss is 1.517918586730957
+Train epoch time: 6597.821 ms, per step time: 143.431 ms
+epoch: 260 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 261 step: 46, loss is 1.7648837566375732
+Train epoch time: 6607.479 ms, per step time: 143.641 ms
+epoch: 261 acc: 0.9105113636363636, best acc is 0.9147727272727273
+epoch: 262 step: 46, loss is 1.371326208114624
+Train epoch time: 6597.432 ms, per step time: 143.422 ms
+epoch: 262 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 263 step: 46, loss is 1.3914909362792969
+Train epoch time: 6611.150 ms, per step time: 143.721 ms
+epoch: 263 acc: 0.9133522727272727, best acc is 0.9147727272727273
+epoch: 264 step: 46, loss is 1.4170031547546387
+Train epoch time: 6583.359 ms, per step time: 143.116 ms
+epoch: 264 acc: 0.9105113636363636, best acc is 0.9147727272727273
+epoch: 265 step: 46, loss is 1.818121075630188
+Train epoch time: 6697.088 ms, per step time: 145.589 ms
+epoch: 265 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 266 step: 46, loss is 2.2462263107299805
+Train epoch time: 6615.139 ms, per step time: 143.807 ms
+epoch: 266 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 267 step: 46, loss is 1.281663179397583
+Train epoch time: 6604.397 ms, per step time: 143.574 ms
+epoch: 267 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 268 step: 46, loss is 1.2965728044509888
+Train epoch time: 6577.879 ms, per step time: 142.997 ms
+epoch: 268 acc: 0.9133522727272727, best acc is 0.9147727272727273
+epoch: 269 step: 46, loss is 1.427449107170105
+Train epoch time: 6594.670 ms, per step time: 143.362 ms
+epoch: 269 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 270 step: 46, loss is 1.7547311782836914
+Train epoch time: 6576.435 ms, per step time: 142.966 ms
+epoch: 270 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 271 step: 46, loss is 1.8905882835388184
+Train epoch time: 6597.860 ms, per step time: 143.432 ms
+epoch: 271 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 272 step: 46, loss is 1.563843011856079
+Train epoch time: 6571.190 ms, per step time: 142.852 ms
+epoch: 272 acc: 0.9133522727272727, best acc is 0.9147727272727273
+epoch: 273 step: 46, loss is 1.292027473449707
+Train epoch time: 6585.505 ms, per step time: 143.163 ms
+epoch: 273 acc: 0.9105113636363636, best acc is 0.9147727272727273
+epoch: 274 step: 46, loss is 1.6589634418487549
+Train epoch time: 6565.861 ms, per step time: 142.736 ms
+epoch: 274 acc: 0.90625, best acc is 0.9147727272727273
+epoch: 275 step: 46, loss is 0.8829156160354614
+Train epoch time: 6599.266 ms, per step time: 143.462 ms
+epoch: 275 acc: 0.9105113636363636, best acc is 0.9147727272727273
+epoch: 276 step: 46, loss is 2.0855846405029297
+Train epoch time: 6565.148 ms, per step time: 142.721 ms
+epoch: 276 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 277 step: 46, loss is 1.7186920642852783
+Train epoch time: 6607.286 ms, per step time: 143.637 ms
+epoch: 277 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 278 step: 46, loss is 1.70877206325531
+Train epoch time: 6581.243 ms, per step time: 143.070 ms
+epoch: 278 acc: 0.90625, best acc is 0.9147727272727273
+epoch: 279 step: 46, loss is 1.7816455364227295
+Train epoch time: 6592.488 ms, per step time: 143.315 ms
+epoch: 279 acc: 0.9105113636363636, best acc is 0.9147727272727273
+epoch: 280 step: 46, loss is 1.338474988937378
+Train epoch time: 6579.852 ms, per step time: 143.040 ms
+epoch: 280 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 281 step: 46, loss is 1.2286032438278198
+Train epoch time: 6586.255 ms, per step time: 143.179 ms
+epoch: 281 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 282 step: 46, loss is 2.1278750896453857
+Train epoch time: 6585.942 ms, per step time: 143.173 ms
+epoch: 282 acc: 0.9119318181818182, best acc is 0.9147727272727273
+epoch: 283 step: 46, loss is 1.2756860256195068
+Train epoch time: 6631.383 ms, per step time: 144.161 ms
+epoch: 283 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 284 step: 46, loss is 1.7500628232955933
+Train epoch time: 6587.112 ms, per step time: 143.198 ms
+epoch: 284 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 285 step: 46, loss is 1.4646105766296387
+Train epoch time: 6595.738 ms, per step time: 143.386 ms
+epoch: 285 acc: 0.90625, best acc is 0.9147727272727273
+epoch: 286 step: 46, loss is 1.2223479747772217
+Train epoch time: 6591.661 ms, per step time: 143.297 ms
+epoch: 286 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 287 step: 46, loss is 1.3985357284545898
+Train epoch time: 6599.004 ms, per step time: 143.457 ms
+epoch: 287 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 288 step: 46, loss is 1.5538090467453003
+Train epoch time: 6620.471 ms, per step time: 143.923 ms
+epoch: 288 acc: 0.9105113636363636, best acc is 0.9147727272727273
+epoch: 289 step: 46, loss is 1.644993543624878
+Train epoch time: 6603.314 ms, per step time: 143.550 ms
+epoch: 289 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 290 step: 46, loss is 1.755486249923706
+Train epoch time: 6622.145 ms, per step time: 143.960 ms
+epoch: 290 acc: 0.90625, best acc is 0.9147727272727273
+epoch: 291 step: 46, loss is 1.7855910062789917
+Train epoch time: 6595.854 ms, per step time: 143.388 ms
+epoch: 291 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 292 step: 46, loss is 0.9195353388786316
+Train epoch time: 6586.125 ms, per step time: 143.177 ms
+epoch: 292 acc: 0.90625, best acc is 0.9147727272727273
+epoch: 293 step: 46, loss is 1.786341667175293
+Train epoch time: 6605.347 ms, per step time: 143.594 ms
+epoch: 293 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 294 step: 46, loss is 1.835697054862976
+Train epoch time: 6554.666 ms, per step time: 142.493 ms
+epoch: 294 acc: 0.9105113636363636, best acc is 0.9147727272727273
+epoch: 295 step: 46, loss is 2.0090219974517822
+Train epoch time: 6601.376 ms, per step time: 143.508 ms
+epoch: 295 acc: 0.9048295454545454, best acc is 0.9147727272727273
+epoch: 296 step: 46, loss is 1.8523521423339844
+Train epoch time: 6596.514 ms, per step time: 143.402 ms
+epoch: 296 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 297 step: 46, loss is 1.6081035137176514
+Train epoch time: 6576.657 ms, per step time: 142.971 ms
+epoch: 297 acc: 0.9090909090909091, best acc is 0.9147727272727273
+epoch: 298 step: 46, loss is 1.8116365671157837
+Train epoch time: 6554.168 ms, per step time: 142.482 ms
+epoch: 298 acc: 0.90625, best acc is 0.9147727272727273
+epoch: 299 step: 46, loss is 1.3243978023529053
+Train epoch time: 6575.704 ms, per step time: 142.950 ms
+epoch: 299 acc: 0.9076704545454546, best acc is 0.9147727272727273
+epoch: 300 step: 46, loss is 2.1540024280548096
+Train epoch time: 6565.931 ms, per step time: 142.738 ms
+epoch: 300 acc: 0.90625, best acc is 0.9147727272727273
+train success
+

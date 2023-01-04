@@ -1,0 +1,14 @@
+{
+    "binFileName":"assign_4814893247719465348_0",
+    "binFileSuffix":".o",
+    "blockDim":1,
+    "kernelName":"assign_4814893247719465348_0__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "opParaSize":0,
+    "parameters":[
+        0,
+        0,
+        0
+    ],
+    "sha256":"f05edf461a32af36d0231cbc6dd63b78395b732bedacdb8f3133dfa8fc8a4f60"
+}

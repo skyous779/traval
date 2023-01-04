@@ -1,0 +1,18 @@
+{
+    "KBHit":false,
+    "binFileName":"bn_infer_3156561532646033255_0",
+    "binFileSuffix":".o",
+    "blockDim":28,
+    "kernelName":"bn_infer_3156561532646033255_0__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "opParaSize":0,
+    "parameters":[
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ],
+    "sha256":"41307a1a1f30007192005293d1835dfaab38ee8ff695efd0b360e06667f586c5"
+}

@@ -1,0 +1,13 @@
+{
+    "binFileName":"log_softmax_v2_9225929231486996744_0",
+    "binFileSuffix":".o",
+    "blockDim":32,
+    "kernelName":"log_softmax_v2_9225929231486996744_0__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "opParaSize":0,
+    "parameters":[
+        0,
+        0
+    ],
+    "sha256":"dd13cdbfd69b28fd485e1f31ef547c941d9d386c03c5beadab9f2d30b3533268"
+}

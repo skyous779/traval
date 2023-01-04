@@ -1,0 +1,15 @@
+{
+    "KBHit":false,
+    "binFileName":"add_2473900397488689050_0",
+    "binFileSuffix":".o",
+    "blockDim":28,
+    "kernelName":"add_2473900397488689050_0__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF",
+    "opParaSize":0,
+    "parameters":[
+        0,
+        0,
+        0
+    ],
+    "sha256":"b42900e4bbca9252cacb492e811618167f62bac6564fe738486519f1bafd2126"
+}
